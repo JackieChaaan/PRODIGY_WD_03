@@ -1,0 +1,151 @@
+:root {
+  --bg-color: #121212;
+  --white: white;
+  --box-color: #FF2E63;
+  --border-color: #EEEDEB;
+  --text-color-1: #8E05C2;
+  --text-color-2: #A31ACB;
+  --text-color-3: #892CDC;
+  --pop-up-color: #121212e6;
+  font-size: 14px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-wrapper {
+  background-color: var(--bg-color);
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+}
+.main-wrapper .container header {
+  padding: 1em 0;
+  text-align: center;
+  color: var(--white);
+}
+.main-wrapper .container header h1 {
+  font-size: 3rem;
+  padding: 10px 0;
+}
+.main-wrapper .container header p {
+  font-size: 2rem;
+}
+.main-wrapper .container main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.main-wrapper .container main .player-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  margin: auto;
+  color: var(--white);
+}
+.main-wrapper .container main .player-section h4 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  margin-bottom: 20px;
+}
+.main-wrapper .container main .player-section .player {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--border-color);
+  font-size: 1.5rem;
+}
+.main-wrapper .container main .player-section .bg {
+  background-color: var(--box-color);
+  color: var(--white);
+  transition: all 0.3s ease-in-out;
+}
+.main-wrapper .container main .bord {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 8px;
+  margin-top: 30px;
+}
+.main-wrapper .container main .bord .cell {
+  border: 3px solid var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: var(--white);
+  transition: all 0.3s ease-in-out;
+}
+.main-wrapper .container main .bord .cell:hover {
+  background-color: var(--box-color);
+}
+.main-wrapper .container main .game-control {
+  margin: 2rem 0;
+}
+.main-wrapper .container main .game-control #restart {
+  outline: none;
+  border: none;
+  background-color: var(--box-color);
+  color: var(--white);
+  padding: 10px 30px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+.main-wrapper .container main .pop-up {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  animation: popup 0.5s ease-in-out 0s;
+}
+.main-wrapper .container main .pop-up .pop-up-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--pop-up-color);
+}
+.main-wrapper .container main .pop-up .pop-up-wrapper h1 {
+  color: var(--box-color);
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+.main-wrapper .container main .pop-up .pop-up-wrapper #play-again {
+  outline: none;
+  border: none;
+  background-color: var(--box-color);
+  color: var(--white);
+  padding: 10px 30px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+@keyframes popup {
+  0% {
+    top: -700px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .main-wrapper .container header h1 {
+    font-size: 2.2rem;
+  }
+  .main-wrapper .container header p {
+    font-size: 1.3rem;
+    line-height: 25px;
+    margin-top: 16px;
+  }
+}/*# sourceMappingURL=style.css.map */
